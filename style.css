@@ -60,3 +60,128 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+/* My code starts here */
+:root {
+  --shadow-color: 30deg 36% 56%;
+  --shadow-elevation-low: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+    0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
+    1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
+  --shadow-elevation-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+    0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
+    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
+    5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+  --shadow-elevation-high: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+    1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.34),
+    2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.34),
+    4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.34),
+    7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.34),
+    11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
+    17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
+    25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh; /* Ensure the layout fills the entire viewport height */
+  flex-wrap: wrap;
+}
+
+/* Left side with background image */
+.left-side {
+  flex: 1; /* Takes up 1/3rd of the width (1 part out of 3) */
+  background: url("./images/ivan-diaz-unsplash.jpg") no-repeat center
+    center/cover;
+  position: relative; /* Allows positioning of child elements */
+}
+
+/* Right side content */
+.right-side {
+  display: flex;
+  flex-direction: column;
+  flex: 2; /* Takes up the remaining 2/3rds of the width */
+  justify-content: center;
+  background-color: #fce5cf;
+}
+
+.right-side p {
+  padding: 20px;
+}
+
+/* The dark banner containing the logo and text */
+.banner {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  display: flex;
+  margin-top: 25vh;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Space between logo and text */
+}
+
+/* Style for the logo inside the banner */
+.banner img {
+  height: 100px; /* Set a fixed height for the logo */
+}
+
+/* Style for the text inside the banner */
+.banner p {
+  color: white;
+  font-size: 4rem;
+}
+
+.signup-form {
+  background-color: white;
+  padding: 20px;
+  box-shadow: var(--shadow-elevation-medium);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form__left-side {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.form__right-side {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.btn__submit {
+  margin: 20px;
+}
+
+.btn__submit button {
+  border: none;
+  border-radius: 3px;
+  padding: 10px 40px;
+  background-color: #596d48;
+  color: white;
+  box-shadow: var(--shadow-elevation-medium);
+}
+
+input {
+  border-radius: 3px;
+  border: 1px solid #d4d4d4;
+  padding: 8px;
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+input:focus {
+  border-color: blue; /* Ensures that only the border color changes */
+  outline: none; /* Removes the default focus outline */
+  box-shadow: 0 0 5px rgba(0, 0, 255, 0.5); /* Optional: adds a subtle glow */
+}
+
+label {
+  font-family: sans-serif;
+  font-size: 0.6rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
